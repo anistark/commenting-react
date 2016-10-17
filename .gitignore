@@ -1,0 +1,16 @@
+# Git Ignored files
+
+# Idea Files
+.idea
+
+# Node Modules
+node_modules
+
+# Build
+src/client/public/*
+
+# Random Files
+.DS_Store
+
+
+
