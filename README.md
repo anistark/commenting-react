@@ -1,6 +1,7 @@
 # Commenting Module
 
-![Js Logo](https://upload.wikimedia.org/wikipedia/commons/6/6a/JavaScript-logo.png)
+![Js Logo](http://requestb.in/q6pxvcq6)
+
 
 ## Pre-Required :
 
