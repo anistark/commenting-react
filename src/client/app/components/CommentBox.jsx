@@ -10,7 +10,7 @@ import Col from 'muicss/lib/react/col';
 
 import { SocketProvider, socketConnect } from 'socket.io-react';
 import io from 'socket.io-client';
-const socket = io.connect('http://localhost:8080');
+const socket = io.connect('http://localhost:5000');
 socket.on('message', msg => console.log(msg));
 
 class CommentBox extends React.Component {
