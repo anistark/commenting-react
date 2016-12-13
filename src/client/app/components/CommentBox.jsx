@@ -10,29 +10,40 @@ import Col from 'muicss/lib/react/col';
 
 import { SocketProvider, socketConnect } from 'socket.io-react';
 import io from 'socket.io-client';
-const socket = io.connect('http://localhost:5000');
-socket.on('message', msg => console.log(msg));
+const socket = io.connect('http://localhost:3000');
+socket.on('chat_channel', msg => console.log(msg));
 
 class CommentBox extends React.Component {
 
     constructor(props) {
         super(props);
+        this.state = {
+            value: ''
+        };
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
     }
 
-    sendMessage() {
-        socket.emit('message', 'Hello world!');
+    handleSubmit(event) {
+        socket.emit('chat_channel', this.state.value);
+        //event.preventDefault();
+    }
+
+    handleChange(event) {
+        // Todo to be implemented later
+        socket.emit('chat_channel_action', 'typing');
     }
 
     render() {
         return (
             <Container fluid={true}>
                 <Row>
-                    <Form inline={true}>
+                    <Form inline={true} onSubmit={this.handleSubmit}>
                         <Col md="11">
-                            <Input label="Your comment here" floatingLabel={true} />
+                            <Input type="text" label="Your comment here" floatingLabel={true} value={this.state.value} onChange={this.handleChange} />
                         </Col>
                         <Col md="1">
-                            <Button variant="fab" color="primary" onClick={this.sendMessage()}> > </Button>
+                            <input type="submit" value="Submit" />
                         </Col>
                     </Form>
                 </Row>
