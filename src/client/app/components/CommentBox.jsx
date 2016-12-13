@@ -11,7 +11,6 @@ import Col from 'muicss/lib/react/col';
 import { SocketProvider, socketConnect } from 'socket.io-react';
 import io from 'socket.io-client';
 const socket = io.connect('http://localhost:3000');
-socket.on('chat_channel', msg => console.log(msg));
 
 class CommentBox extends React.Component {
 
@@ -26,12 +25,11 @@ class CommentBox extends React.Component {
 
     handleSubmit(event) {
         socket.emit('chat_channel', this.state.value);
-        //event.preventDefault();
+        event.preventDefault();
     }
 
     handleChange(event) {
-        // Todo to be implemented later
-        socket.emit('chat_channel_action', 'typing');
+        this.setState({value: event.target.value});
     }
 
     render() {

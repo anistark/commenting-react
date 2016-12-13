@@ -10,6 +10,10 @@ import Moment from 'moment';
 require('../assets/theme.less');
 require('../assets/app.less');
 
+import { SocketProvider, socketConnect } from 'socket.io-react';
+import io from 'socket.io-client';
+const socket = io.connect('http://localhost:3000');
+
 class CommentTree extends React.Component {
 
     constructor(props) {
@@ -18,11 +22,7 @@ class CommentTree extends React.Component {
     }
 
     getData() {
-        return (
-            <Panel>
-                Something
-            </Panel>
-        );
+        socket.on('chat_channel', msg => console.log(msg));
     }
 
     render() {
