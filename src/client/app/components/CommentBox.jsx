@@ -26,9 +26,11 @@ class CommentBox extends React.Component {
     handleSubmit(event) {
         socket.emit('chat_channel', this.state.value);
         event.preventDefault();
+        this.setState({value: ""});
     }
 
     handleChange(event) {
+        //todo send typing status
         this.setState({value: event.target.value});
     }
 
