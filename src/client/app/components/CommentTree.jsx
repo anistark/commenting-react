@@ -22,7 +22,10 @@ class CommentTree extends React.Component {
     }
 
     getData() {
-        socket.on('chat_channel', msg => console.log(msg));
+        socket.on('chat_channel', msg => {
+            console.log(msg);
+            return "something";
+        });
     }
 
     render() {
