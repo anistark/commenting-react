@@ -1,6 +1,6 @@
 # Commenting Module
 
-![Js Logo][1]  [![Build Status][2]
+![Js Logo][1]  [![Build Status](https://travis-ci.org/anistark/commenting-react.svg?branch=master)](https://travis-ci.org/anistark/commenting-react)
 
 
 ## Pre-Required :
@@ -43,5 +43,4 @@ npm run dev
 
 
 [1]: http://3.bp.blogspot.com/-PTty3CfTGnA/TpZOEjTQ_WI/AAAAAAAAAeo/KeKt_D5X2xo/s1600/js.jpg
-[2]: https://travis-ci.org/anistark/commenting-react.svg?branch=master)](https://travis-ci.org/anistark/commenting-react
 
