@@ -11,6 +11,7 @@ src/client/public/*
 
 # Random Files
 .DS_Store
+*.rdb
 
 
 

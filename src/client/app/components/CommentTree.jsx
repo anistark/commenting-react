@@ -18,7 +18,15 @@ class CommentTree extends React.Component {
 
     constructor(props) {
         super(props);
-        this.state = {};
+        this.state = {
+            data: {}
+        };
+    }
+
+    componentDidMount() {
+        socket.on('chat_channel', data => {
+            this.setState({ data })
+        })
     }
 
     getData() {
@@ -33,7 +41,9 @@ class CommentTree extends React.Component {
             <Container fluid={true}>
                 <Row>
                     <Col md="12">
-                        {this.getData()}
+                        <Panel>
+                            <input type="text" value={ socket } />
+                        </Panel>
                     </Col>
                 </Row>
             </Container>
